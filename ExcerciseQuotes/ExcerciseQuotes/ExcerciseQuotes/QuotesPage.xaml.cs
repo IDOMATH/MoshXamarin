@@ -12,32 +12,18 @@ namespace ExcerciseQuotes
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuotesPage : ContentPage
     {
-        public static class Quotes
-        {
-            private static int index { get; set; }
-            private static readonly string[] QuoteString = new string[4] { "quote1", "quote2", "quote3", "quote4" };
-
-            static Quotes()
-            {
-                index = 0;
-            }
-
-            public static string GetQuote()
-            {
-                var quote = QuoteString[index];
-                index = (index + 1) % QuoteString.Length;
-                return quote;
-            }
-        }
+        private int _index = 0;
+        private string[] _quotes = new string[] { "quote1", "quote2", "quote3", "quote4" };
         public QuotesPage()
         {
             InitializeComponent();
             fontSizeSlider.Value = 16;
-            quoteLabel.Text = Quotes.GetQuote();
+            quoteLabel.Text = _quotes[_index];
         }
         public void NextQuoteButtonHandler(object sender, EventArgs e)
         {
-            quoteLabel.Text = Quotes.GetQuote();
+            _index = (_index + 1) % _quotes.Length;
+            quoteLabel.Text = _quotes[_index];
         }
     }
 }

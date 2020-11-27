@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseStackLayout2.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout>
+        <Label Text="nyc_photographer"/>
+        <Image Source="http://lorempixel.com/1920/1080/nature/3/"
+               VerticalOptions="Start"/>
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="Like"/>
+            <Label Text="Comment"/>
+            <Label Text="Share"/>
+        </StackLayout>
+        <BoxView Color="#F0F0F0" HeightRequest="1"/>
+        <Label Text="700 Likes"/>
+        <Label Text="this is the description and it is long.  Might even take up a couple lines on a phone.  Cool, I hope."/>
+    </StackLayout>
+
+</ContentPage>
