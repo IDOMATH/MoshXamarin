@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HelloWorld
+namespace ExercisesAbsoluteLayout1and2
 {
     public partial class App : Application
     {
@@ -10,7 +10,7 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            MainPage = new AbsolutePage();
+            MainPage = new Page2();
         }
 
         protected override void OnStart()
