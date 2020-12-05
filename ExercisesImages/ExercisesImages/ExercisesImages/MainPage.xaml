@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExercisesImages.MainPage">
+
+    <StackLayout>
+        <AbsoluteLayout>
+            <Button Text="Previous"
+                    AbsoluteLayout.LayoutBounds=".05,.05, 100, 50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <ActivityIndicator IsRunning="True"
+                    AbsoluteLayout.LayoutBounds=".5,.5, 20, 20"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Button Text="Next"
+                    AbsoluteLayout.LayoutBounds=".95,.05, 100, 50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Image Source="http://lorempixel.com/1920/1080/city/1/"
+                   Aspect="AspectFit"
+                   x:Name="image"
+                   AbsoluteLayout.LayoutBounds=".10,.10,1,1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+        </AbsoluteLayout>
+    </StackLayout>
+
+</ContentPage>
