@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{913CC316-4EBC-4BB9-B202-9C1A98F9B74E}</ProjectGuid>
+    <ProjectGuid>{5D434FE4-72F1-46AF-8EEE-264459A799A0}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HelloWorld.iOS</RootNamespace>
+    <RootNamespace>ExercisesRelativeLayout.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>HelloWorld.iOS</AssemblyName>
+    <AssemblyName>ExercisesRelativeLayout.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -123,23 +123,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\HelloWorld\HelloWorld.csproj">
-      <Project>{F2E52B29-21B8-44E4-A001-F84025AFB31E}</Project>
-      <Name>HelloWorld</Name>
+    <ProjectReference Include="..\ExercisesRelativeLayout\ExercisesRelativeLayout.csproj">
+      <Project>{47F4CC95-F1F7-4BAE-90C1-4361A62BF825}</Project>
+      <Name>ExercisesRelativeLayout</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\._clock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\._clock%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\._clock%403x.png" />
   </ItemGroup>
 </Project>

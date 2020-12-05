@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HelloWorld
+namespace ExercisesRelativeLayout
 {
     public partial class App : Application
     {
@@ -10,7 +10,7 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            MainPage = new ImagePage();
+            MainPage = new Page1();
         }
 
         protected override void OnStart()
