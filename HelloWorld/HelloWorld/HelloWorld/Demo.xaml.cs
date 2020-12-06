@@ -38,8 +38,21 @@ namespace HelloWorld
 
         private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var contact = e.SelectedItem as Contact;
-            DisplayAlert("Selected", contact.Name, "OK");
+            //var contact = e.SelectedItem as Contact;
+            //DisplayAlert("Selected", contact.Name, "OK");
+            listView.SelectedItem = null;
+        }
+
+        private void Call_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var contact = menuItem.CommandParameter as Contact;
+            DisplayAlert("Call", contact.Name, "OK");
+        }
+
+        private void Delete_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

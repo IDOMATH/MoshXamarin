@@ -22,6 +22,15 @@
                             </StackLayout>
                             <Button Text="Follow"/>
                         </StackLayout>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Call"
+                                      Clicked="Call_Clicked"
+                                      CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Delete"
+                                      Clicked="Delete_Clicked"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
