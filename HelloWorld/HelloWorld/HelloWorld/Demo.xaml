@@ -3,16 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HelloWorld.Demo">
     <ContentPage.Content>
-        <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black"
-                  HasUnevenRows="True"
+        <ListView x:Name="listView">
+            <!--  Put this in the above listview for grouping.
                   IsGroupingEnabled="True"
                   GroupDisplayBinding="{Binding Title}"
-                  GroupShortNameBinding="{Binding ShortTitle}"
-                  ItemTapped="listView_ItemTapped"
-                  ItemSelected="listView_ItemSelected">
+                  GroupShortNameBinding="{Binding ShortTitle}"-->
+
+            <!--    Put this in the above listview for handlers and shit.
+                    HasUnevenRows="True"
+                    ItemTapped="listView_ItemTapped"
+                    ItemSelected="listView_ItemSelected"-->
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Status}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding .}" IsDestructive="True"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                    <!--<ViewCell>
                         <StackLayout Orientation="Horizontal"
                                      Padding="5">
                             <Image Source="{Binding ImageUrl}"/>
@@ -31,7 +40,7 @@
                                       IsDestructive="True"
                                       CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
-                    </ViewCell>
+                    </ViewCell>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

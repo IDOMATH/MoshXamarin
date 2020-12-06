@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,22 +13,29 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Demo : ContentPage
     {
+        private ObservableCollection<Contact> _contacts;
         public Demo()
         {
             InitializeComponent();
-            var names = new List<ContactGroup>
+            //var names = new List<ContactGroup>
+            //{
+            //    new ContactGroup("B", "B")
+            //    {
+            //        new Contact { Name = "Blane", ImageUrl = "http://lorempixel.com/100/100/people/1" }
+            //    },
+            //    new ContactGroup("M", "M")
+            //    {
+            //        new Contact { Name = "Mosh", ImageUrl = "http://lorempixel.com/100/100/people/2", Status="Hey, let's talk" }
+            //    }
+
+            //};
+            //listView.ItemsSource = names;
+            _contacts = new ObservableCollection<Contact>
             {
-                new ContactGroup("B", "B")
-                {
-                    new Contact { Name = "Blane", ImageUrl = "http://lorempixel.com/100/100/people/1" }
-                },
-                new ContactGroup("M", "M")
-                {
-                    new Contact { Name = "Mosh", ImageUrl = "http://lorempixel.com/100/100/people/2", Status="Hey, let's talk" }
-                }
-                
+                new Contact { Name = "Blane", ImageUrl = "http://lorempixel.com/100/100/people/1" },
+                new Contact { Name = "Mosh", ImageUrl = "http://lorempixel.com/100/100/people/2", Status="Hey, let's talk" }
             };
-            listView.ItemsSource = names;
+            listView.ItemsSource = _contacts;
         }
 
         private void listView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -52,7 +60,8 @@ namespace HelloWorld
 
         private void Delete_Clicked(object sender, EventArgs e)
         {
-
+            var contact = (sender as MenuItem).CommandParameter as Contact;
+            _contacts.Remove(contact);
         }
     }
 }
