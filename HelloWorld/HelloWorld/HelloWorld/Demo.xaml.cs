@@ -37,6 +37,16 @@ namespace HelloWorld
             };
             listView.ItemsSource = _contacts;
         }
+        List<Contact> GetContacts()
+        {
+            var contacts = new List<Contact>
+            {
+                new Contact { Name = "John", ImageUrl = "http://lorempixel.com/100/100/people/3" },
+                new Contact { Name = "Bill", ImageUrl = "http://lorempixel.com/100/100/people/4" }
+            };
+
+            return contacts;
+        }
 
         private void listView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
@@ -62,6 +72,16 @@ namespace HelloWorld
         {
             var contact = (sender as MenuItem).CommandParameter as Contact;
             _contacts.Remove(contact);
+        }
+
+        private void listView_Refreshing(object sender, EventArgs e)
+        {
+            _contacts = GetContacts() as ObservableCollection<Contact>;
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
